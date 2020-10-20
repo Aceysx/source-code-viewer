@@ -30,8 +30,6 @@ public class ApplicationContext {
         if (Option.of(getFromCache(key)).isDefined()) {
             //delete cache
         }
-        List<Resource> resources = resolver.load();
-
 
         return null;
     }

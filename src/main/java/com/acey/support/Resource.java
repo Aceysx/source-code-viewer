@@ -1,8 +1,14 @@
 package com.acey.support;
 
-import java.io.File;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Resource {
-    private File file;
-    private FileType fileType;
+    private ResourceResolverType resolveType;
+    private String originUrl;
+    private String resolvePath;
 }
