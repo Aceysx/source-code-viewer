@@ -1,14 +1,14 @@
 package com.acey.core.context;
 
 import com.acey.core.Container;
-import com.acey.support.resolver.ResourceResolver;
+import com.acey.support.locator.ResourceLocator;
 import io.vavr.control.Option;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ApplicationContext {
 
-    public Container get(String key, ResourceResolver resolver, boolean isRefresh) {
+    public Container get(String key, ResourceLocator resolver, boolean isRefresh) {
         if (isRefresh) {
             return refresh(key, resolver);
         }
@@ -23,7 +23,7 @@ public class ApplicationContext {
         return null;
     }
 
-    private Container refresh(String key, ResourceResolver resolver) {
+    private Container refresh(String key, ResourceLocator resolver) {
         //定位
 
         //加载

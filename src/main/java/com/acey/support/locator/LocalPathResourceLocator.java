@@ -1,4 +1,4 @@
-package com.acey.support.resolver;
+package com.acey.support.locator;
 
 import com.acey.support.model.Resource;
 import com.acey.support.exceptions.SystemException;
@@ -8,13 +8,13 @@ import lombok.Getter;
 import static com.acey.support.model.ResourceResolverType.LOCAL_PATH;
 
 @Getter
-public class LocalPathResourceResolver extends AbstractResourceResolver {
-    public LocalPathResourceResolver(String resource) {
+public class LocalPathResourceLocator extends AbstractResourceLocator {
+    public LocalPathResourceLocator(String resource) {
         super(resource);
     }
 
     @Override
-    public Resource resolve() {
+    public Resource locate() {
         if (!FileUtil.isExistAndIsDirectory(this.getOrigResource())) {
             throw new SystemException(
                 String.format("%s path is not exist", this.getOrigResource())

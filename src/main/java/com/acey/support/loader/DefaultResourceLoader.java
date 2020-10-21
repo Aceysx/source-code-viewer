@@ -8,13 +8,14 @@ import java.io.File;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class DefaultResolveLoader {
+public class DefaultResourceLoader implements ResourceLoader {
     private Resource resource;
 
-    public DefaultResolveLoader(Resource resource) {
+    public DefaultResourceLoader(Resource resource) {
         this.resource = resource;
     }
 
+    @Override
     public LoaderModel load() {
         Predicate<File> fileFilter = (file) -> file.isFile() && file.getName().endsWith(".java");
         List<String> paths = FileUtil.deepFiles(this.resource.getResolvePath(), fileFilter);

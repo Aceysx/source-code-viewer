@@ -1,4 +1,4 @@
-package com.acey.support.resolver;
+package com.acey.support.locator;
 
 import com.acey.support.model.Resource;
 import com.acey.support.model.ResourceResolverType;
@@ -8,14 +8,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class ResourceResolverTest {
-    private ResourceResolver resourceResolver;
+class ResourceLocatorTest {
+    private ResourceLocator resourceLocator;
 
     @Test
     public void should_resolve_when_given_Local_path_if_exist() {
         String path = System.getProperty("user.dir");
-        resourceResolver = new LocalPathResourceResolver(path);
-        Resource resource = resourceResolver.resolve();
+        resourceLocator = new LocalPathResourceLocator(path);
+        Resource resource = resourceLocator.locate();
 
         assertEquals(resource.getOriginUrl(), path);
         assertEquals(resource.getResolvePath(), path);
@@ -25,8 +25,8 @@ class ResourceResolverTest {
     @Test
     public void should_failure_when_given_Local_path_if_not_exist() {
         String path = "./path";
-        resourceResolver = new LocalPathResourceResolver(path);
-        Exception assertThrows = assertThrows(SystemException.class, () -> resourceResolver.resolve());
+        resourceLocator = new LocalPathResourceLocator(path);
+        Exception assertThrows = assertThrows(SystemException.class, () -> resourceLocator.locate());
         assertTrue(assertThrows.getMessage().contains("is not exist"));
     }
 

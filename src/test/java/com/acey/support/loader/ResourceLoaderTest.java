@@ -10,13 +10,13 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class ResolveLoaderTest {
+class ResourceLoaderTest {
 
     @Test
     public void should_return_java_files() {
         String path = Paths.get(System.getProperty("user.dir"), "src", "test", "resources", "core").toString();
         Resource resource = new Resource(ResourceResolverType.LOCAL_PATH, path, path);
-        LoaderModel loaderModel = new DefaultResolveLoader(resource).load();
+        LoaderModel loaderModel = new DefaultResourceLoader(resource).load();
 
         assertEquals(resource, loaderModel.getResource());
         assertEquals(16, loaderModel.getFilterFiles().size());
