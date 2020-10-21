@@ -1,4 +1,4 @@
-package com.acey.support;
+package com.acey.support.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

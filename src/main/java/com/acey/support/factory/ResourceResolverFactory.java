@@ -1,11 +1,11 @@
 package com.acey.support.factory;
 
-import com.acey.support.ResourceResolverType;
+import com.acey.support.model.ResourceResolverType;
 import com.acey.support.resolver.LocalPathResourceResolver;
 import com.acey.support.resolver.ResourceResolver;
 import io.vavr.API;
 
-import static com.acey.support.ResourceResolverType.LOCAL_PATH;
+import static com.acey.support.model.ResourceResolverType.LOCAL_PATH;
 import static io.vavr.API.$;
 import static io.vavr.API.Case;
 

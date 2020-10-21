@@ -1,6 +1,6 @@
 package com.acey.support.resolver;
 
-import com.acey.support.Resource;
+import com.acey.support.model.Resource;
 
 public interface ResourceResolver {
 

@@ -1,11 +1,11 @@
 package com.acey.support.resolver;
 
-import com.acey.support.Resource;
+import com.acey.support.model.Resource;
 import com.acey.support.exceptions.SystemException;
 import com.acey.utils.FileUtil;
 import lombok.Getter;
 
-import static com.acey.support.ResourceResolverType.LOCAL_PATH;
+import static com.acey.support.model.ResourceResolverType.LOCAL_PATH;
 
 @Getter
 public class LocalPathResourceResolver extends AbstractResourceResolver {

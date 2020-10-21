@@ -1,4 +1,4 @@
-package com.acey.support;
+package com.acey.support.model;
 
 public enum ResourceResolverType {
     ZIP_FILE,

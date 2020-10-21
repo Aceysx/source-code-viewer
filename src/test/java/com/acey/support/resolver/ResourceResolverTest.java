@@ -1,7 +1,7 @@
 package com.acey.support.resolver;
 
-import com.acey.support.Resource;
-import com.acey.support.ResourceResolverType;
+import com.acey.support.model.Resource;
+import com.acey.support.model.ResourceResolverType;
 import com.acey.support.exceptions.SystemException;
 import org.junit.jupiter.api.Test;
 
